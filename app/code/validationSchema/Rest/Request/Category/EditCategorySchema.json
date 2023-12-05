@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Id of category",
+      "example": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 12,
+      "description": "Title of category",
+      "example": "Category 1"
+    },
+    "eId": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "eId",
+      "example": 1
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "eId"
+  ],
+  "additionalProperties": false
+}

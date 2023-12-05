@@ -1,0 +1,16 @@
+version: '3'
+
+server:
+  command: "php public/index.php"
+  env:
+    APP_RUNTIME: App\Infrastructure\Runner\Runtime
+
+http:
+  address: "0.0.0.0:80"
+  pool:
+    num_workers: 2
+    supervisor:
+      ttl: 3600s
+
+logs:
+  level: error

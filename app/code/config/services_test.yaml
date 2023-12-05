@@ -1,0 +1,4 @@
+parameters:
+
+services:
+    App\Services\Notifications\NotificationServiceInterface: '@App\Services\Notifications\MockNotificationService'

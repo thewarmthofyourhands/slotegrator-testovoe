@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  mysql:
+    image: 'mariadb:latest'
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=slotegrator
+      - MYSQL_PASSWORD=pass
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+
+  app:
+    build:
+      context: ./../app
+      dockerfile: Dockerfile
+      target: base
+    command: rr serve -w /code -c /code/.rr.yaml
+    tty: true
+    volumes:
+      - './../app/code:/code'
+    ports:
+      - '80:80'
